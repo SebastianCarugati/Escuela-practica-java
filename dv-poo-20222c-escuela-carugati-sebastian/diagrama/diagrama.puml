@@ -1,0 +1,47 @@
+@startuml
+Title Diagrama escuela
+
+class Escuela{
+}
+
+class Materias {
+nombre
+cuatrimestreCursado
+getMateria()
+setMateria()
+mostrarMateria()
+}
+
+
+class Alumnos {
+nombre
+edad
+getAlumno()
+setAlumno()
+mostrarAlumno()
+}
+
+class Asignacion {
+notas
+Estado
+getNota()
+setNota()
+mostrarNota()
+}
+
+enum Estado{
+APROBADO
+DESAPROBADO
+mostrarEstado()
+}
+
+Escuela "1" -- "1..*" Materias : tiene
+Escuela "1" -- "1..*" Alumnos : asisten
+Materias "1..*" -- "1..*" Alumnos : cursan
+Materias "1" -- "1" Asignacion : califica
+Asignacion "1"-- "1" Estado : determina
+
+
+
+
+@enduml
